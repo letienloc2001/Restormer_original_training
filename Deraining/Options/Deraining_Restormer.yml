@@ -10,8 +10,8 @@ datasets:
   train:
     name: TrainSet
     type: Dataset_PairedImage
-    dataroot_gt: ./village/train
-    dataroot_lq: ./masked_image/train
+    dataroot_gt: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/village/train
+    dataroot_lq: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/masked_image/train
     geometric_augs: true
 
     filename_tmpl: '{}'
@@ -43,8 +43,8 @@ datasets:
   val:
     name: ValSet
     type: Dataset_PairedImage
-    dataroot_gt: ./village/val
-    dataroot_lq: ./masked_image/val
+    dataroot_gt: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/village/val
+    dataroot_lq: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/masked_image/val
     io_backend:
       type: disk
 
