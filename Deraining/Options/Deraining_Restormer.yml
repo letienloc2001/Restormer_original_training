@@ -71,7 +71,7 @@ path:
   # experiments_root: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer
   # models: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer/models
   # training_states: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer/training_states
-  # log: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer
+  log: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer
   # visualization: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting_Restormer/visualization
 
 # training settings
