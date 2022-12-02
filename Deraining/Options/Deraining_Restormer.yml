@@ -67,7 +67,13 @@ network_g:
 path:
   pretrain_network_g: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/best_checkpoint/net_g_latest-psnr-29.pth
   strict_load_g: true
-  resume_state: ~
+  resume_state: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting/training_states/3000.state
+  root: /content/Restormer_original_training
+  experiments_root: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting
+  models: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting/models
+  training_states: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting/training_states
+  log: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting
+  visualization: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/Inpainting/visualization
 
 # training settings
 train:
