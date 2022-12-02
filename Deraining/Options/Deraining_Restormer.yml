@@ -10,8 +10,8 @@ datasets:
   train:
     name: TrainSet
     type: Dataset_PairedImage
-    dataroot_gt: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/village/train
-    dataroot_lq: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/masked_image/train
+    dataroot_gt: /content/drive/Shareddrives/HCMUT/Thesis/data/places265/village/target/train
+    dataroot_lq: /content/drive/Shareddrives/HCMUT/Thesis/data/places265/village/input/train
     geometric_augs: true
 
     filename_tmpl: '{}'
@@ -43,8 +43,8 @@ datasets:
   val:
     name: ValSet
     type: Dataset_PairedImage
-    dataroot_gt: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/village/val
-    dataroot_lq: ../drive/Shareddrives/HCMUT/DACN/data_collection/Places2-small/masked_image/val
+    dataroot_gt: /content/drive/Shareddrives/HCMUT/Thesis/data/places265/village/target/val
+    dataroot_lq: /content/drive/Shareddrives/HCMUT/Thesis/data/places265/village/input/val
     io_backend:
       type: disk
 
@@ -65,7 +65,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ../deraining.pth
+  pretrain_network_g: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/best_checkpoint/net_g_latest-psnr-29.pth
   strict_load_g: true
   resume_state: ~
 

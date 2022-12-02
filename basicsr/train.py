@@ -142,7 +142,7 @@ def main():
     # torch.backends.cudnn.deterministic = True
 
     # automatic resume ..
-    state_folder_path = 'experiments/{}/training_states/'.format(opt['name'])
+    state_folder_path = '/content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/experiments/{}/training_states/'.format(opt['name'])
     import os
     try:
         states = os.listdir(state_folder_path)
