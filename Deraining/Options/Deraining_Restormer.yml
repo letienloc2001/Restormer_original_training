@@ -10,8 +10,8 @@ datasets:
   train:
     name: TrainSet
     type: Dataset_PairedImage
-    dataroot_gt: ./Deraining/Datasets/train/Rain13K/target
-    dataroot_lq: ./Deraining/Datasets/train/Rain13K/input
+    dataroot_gt: ./village/train
+    dataroot_lq: ./masked_image/train
     geometric_augs: true
 
     filename_tmpl: '{}'
@@ -25,7 +25,7 @@ datasets:
 
     ### -------------Progressive training--------------------------
     mini_batch_sizes: [8,5,4,2,1,1]             # Batch size per gpu   
-    iters: [92000,64000,48000,36000,36000,24000]
+    iters: [920,640,480,360,360,240] #[92000,64000,48000,36000,36000,24000]
     gt_size: 384   # Max patch size for progressive training
     gt_sizes: [128,160,192,256,320,384]  # Patch sizes for progressive training.
     ### ------------------------------------------------------------
@@ -43,8 +43,8 @@ datasets:
   val:
     name: ValSet
     type: Dataset_PairedImage
-    dataroot_gt: ./Deraining/Datasets/test/Rain100L/target
-    dataroot_lq: ./Deraining/Datasets/test/Rain100L/input
+    dataroot_gt: ./village/val
+    dataroot_lq: ./masked_image/val
     io_backend:
       type: disk
 
@@ -65,13 +65,13 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ~
+  pretrain_network_g: ./deraining.pth
   strict_load_g: true
   resume_state: ~
 
 # training settings
 train:
-  total_iter: 300000
+  total_iter: 3000 #300000
   warmup_iter: -1 # no warm up
   use_grad_clip: true
 
@@ -80,7 +80,7 @@ train:
   # 2nd cycle: cosine annealing (3e-4 to 1e-6) for 208k iters.
   scheduler:
     type: CosineAnnealingRestartCyclicLR
-    periods: [92000, 208000]       
+    periods: [920, 2080] #[92000, 208000]         
     restart_weights: [1,1]
     eta_mins: [0.0003,0.000001]   
   
