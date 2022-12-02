@@ -139,6 +139,7 @@ def get_root_logger(logger_name='basicsr', log_level=logging.INFO, log_file=None
     elif log_file is not None:
         logger.setLevel(log_level)
         # add file handler
+        print(' ------------------------------------- ', log_file)
         file_handler = logging.FileHandler(log_file, 'w')
         file_handler.setFormatter(logging.Formatter(format_str))
         file_handler.setLevel(log_level)
