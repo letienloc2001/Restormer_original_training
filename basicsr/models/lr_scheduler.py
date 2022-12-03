@@ -131,6 +131,7 @@ def get_position_from_periods(iteration, cumulative_period):
     for i, period in enumerate(cumulative_period):
         if iteration <= period:
             return i
+    return 0
 
 
 class CosineAnnealingRestartLR(_LRScheduler):
