@@ -219,6 +219,8 @@ class CosineAnnealingRestartCyclicLR(_LRScheduler):
     def get_lr(self):
         idx = get_position_from_periods(self.last_epoch,
                                         self.cumulative_period)
+        print('---------------------', self.restart_weights)
+        print('---------------------', self.idx)
         current_weight = self.restart_weights[idx]
         nearest_restart = 0 if idx == 0 else self.cumulative_period[idx - 1]
         current_period = self.periods[idx]
