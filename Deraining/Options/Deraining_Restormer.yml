@@ -1,5 +1,5 @@
 # general settings
-name: Inpainting_Restormer
+name: Inpainting_Restormer_new
 model_type: ImageCleanModel
 scale: 1
 num_gpu: 1  # set num_gpu: 0 for cpu mode
