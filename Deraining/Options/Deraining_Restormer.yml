@@ -21,13 +21,13 @@ datasets:
     # data loader
     use_shuffle: true
     num_worker_per_gpu: 1
-    batch_size_per_gpu: 8
+    batch_size_per_gpu: 6
 
     ### -------------Progressive training--------------------------
     mini_batch_sizes: [8,5,4,2,1,1]             # Batch size per gpu   
     iters: [92000,64000,48000,36000,36000,24000]
     gt_size: 384   # Max patch size for progressive training
-    gt_sizes: [112,160,192,256,320,384]  # Patch sizes for progressive training.
+    gt_sizes: [104,160,192,256,320,384]  # Patch sizes for progressive training.
     ### ------------------------------------------------------------
 
     ### ------- Training on single fixed-patch size 128x128---------
