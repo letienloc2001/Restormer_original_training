@@ -65,7 +65,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/best_checkpoint/net_g_latest-psnr-29.pth
+  pretrain_network_g: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/best_checkpoint/deraining.pth #/content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/best_checkpoint/net_g_latest-psnr-29.pth
   strict_load_g: true
   resume_state: ~
   root: /content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer
@@ -109,7 +109,7 @@ train:
 # validation settings
 val:
   window_size: 8
-  val_freq: !!float 4e2
+  val_freq: !!float 4e1
   save_img: false
   rgb2bgr: true
   use_image: true
@@ -124,7 +124,7 @@ val:
 # logging settings
 logger:
   print_freq: 1000
-  save_checkpoint_freq: !!float 4e2
+  save_checkpoint_freq: !!float 4e1
   use_tb_logger: true
   wandb:
     project: ~
