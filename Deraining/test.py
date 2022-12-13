@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(description='Image Deraining using Restormer')
 
 parser.add_argument('--input_dir', default='./Datasets/', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/', type=str, help='Directory for results')
-parser.add_argument('--weights', default='./pretrained_models/deraining.pth', type=str, help='Path to weights')
+parser.add_argument('--2', default='./pretrained_models/deraining.pth', type=str, help='Path to weights')
 
 args = parser.parse_args()
 
@@ -53,13 +53,13 @@ model_restoration.eval()
 
 
 factor = 8
-datasets = ['Rain100L', 'Rain100H', 'Test100', 'Test1200', 'Test2800']
+datasets = ['places2-village']
 
 for dataset in datasets:
     result_dir  = os.path.join(args.result_dir, dataset)
     os.makedirs(result_dir, exist_ok=True)
 
-    inp_dir = os.path.join(args.input_dir, 'test', dataset, 'input')
+    inp_dir = os.path.join(args.input_dir, 'input', 'test')
     files = natsorted(glob(os.path.join(inp_dir, '*.png')) + glob(os.path.join(inp_dir, '*.jpg')))
     with torch.no_grad():
         for file_ in tqdm(files):
