@@ -14,6 +14,12 @@ import torch
 import torch.nn.functional as F
 import utils
 
+import sys
+currDir = os.path.dirname(os.path.realpath(__file__))
+rootDir = os.path.abspath(os.path.join(currDir, '..'))
+if rootDir not in sys.path: # add parent dir to paths
+    sys.path.append(rootDir)
+
 from natsort import natsorted
 from glob import glob
 from basicsr.models.archs.restormer_arch import Restormer
@@ -24,7 +30,7 @@ parser = argparse.ArgumentParser(description='Image Deraining using Restormer')
 
 parser.add_argument('--input_dir', default='./Datasets/', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/', type=str, help='Directory for results')
-parser.add_argument('--2', default='./pretrained_models/deraining.pth', type=str, help='Path to weights')
+parser.add_argument('--weights', default='./pretrained_models/deraining.pth', type=str, help='Path to weights')
 
 args = parser.parse_args()
 

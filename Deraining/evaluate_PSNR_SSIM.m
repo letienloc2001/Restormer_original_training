@@ -6,7 +6,7 @@
 clc;close all;clear all;
 
 % datasets = {'Rain100L'};
-datasets = {'Test100', 'Rain100H', 'Rain100L', 'Test2800', 'Test1200'};
+datasets = {'places2-village'};
 num_set = length(datasets);
 
 psnr_alldatasets = 0;
@@ -17,8 +17,8 @@ delete(gcp('nocreate'))
 parpool('local',20);
 
 for idx_set = 1:num_set
-    file_path = strcat('./results/', datasets{idx_set}, '/');
-    gt_path = strcat('./Datasets/test/', datasets{idx_set}, '/target/');
+    file_path = '/content/drive/Shareddrives/HCMUT/Thesis/checkpoint/restormer/results/';
+    gt_path = '/content/drive/Shareddrives/HCMUT/Thesis/data/places265/schoolhouse/target/test/';
     path_list = [dir(strcat(file_path,'*.jpg')); dir(strcat(file_path,'*.png'))];
     gt_list = [dir(strcat(gt_path,'*.jpg')); dir(strcat(gt_path,'*.png'))];
     img_num = length(path_list);
